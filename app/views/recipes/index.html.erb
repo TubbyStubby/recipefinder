@@ -1,0 +1,14 @@
+<table border='1'>
+	<tr>
+		<th>Thumbnail</th>
+		<th>Title</th>
+		<th>Social Rank</th>
+	</tr>
+	<% @result.each do |dish| %>
+	<tr>
+		<td><%= link_to image_tag(dish["image_url"], size: "100x100"), dish["source_url"] %></td>
+		<td><%= link_to sanitize(dish["title"]), dish["source_url"] %></td>
+		<td><%= dish["social_rank"] %></td>
+	</tr>
+	<% end %>
+</table>
